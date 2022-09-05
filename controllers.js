@@ -235,7 +235,7 @@ export const wifiConnectionData = async () => {
 
 export const audioData = async () => {
   try {
-    console.log("wifi Interface Information:");
+    console.log("audio Interface Information:");
 
     await si.audio().then((data) => {
       data.map((au) => {
@@ -250,3 +250,24 @@ export const audioData = async () => {
     console.log(error);
   }
 };
+
+// bluetooth information
+
+export const bluetoothData = async () => {
+  try {
+    console.log("audio Interface Information:");
+
+    await si.bluetoothDevices().then((data) => {
+      data.map((res) => {
+        console.log(
+          ` - device: ${res.device} \n - name: ${res.name} \n - manufacturer: ${res.manufacturer} \n - device mac: ${res.macDevice} \n - mac host: ${res.macHost} - type: ${res.type} \n - batteryPercent: ${res.batteryPercent} \n - connected: ${res.connected} \n`
+          //   `- bank: ${mem.bank} with quantity ${quantity} with price ${price}`
+          //   \n - default: ${au.default} \n - out: ${au.out} \n - in: ${au.in} \n
+        );
+      });
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+  

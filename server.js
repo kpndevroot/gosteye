@@ -39,6 +39,10 @@ async function load() {
   console.log(dot);
 
   await sys.audioData();
+  console.log(dot);
+  await sys.bluetoothData();
+
+  console.log(dot);
 }
 figlet.text(
   "GOST'S EYE!",
