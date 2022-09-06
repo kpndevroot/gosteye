@@ -39,16 +39,16 @@ async function load() {
   console.log(dot);
 
   await sys.audioData();
-  console.log(dot);
-  await sys.bluetoothData();
+  // console.log(dot);
+  // await sys.bluetoothData();
 
   console.log(dot);
 }
 figlet.text(
   "GOST'S EYE!",
   {
-    font: "Ghost",
-    horizontalLayout: "default",
+    font: "Shadow",
+    horizontalLayout: "full",
     verticalLayout: "default",
     width: 100,
     whitespaceBreak: false,
@@ -62,9 +62,9 @@ figlet.text(
     console.log(data);
   }
 );
-const spinner = createSpinner("FETCH ... \n").start();
-setTimeout(() => {
-  spinner.success();
-}, 1500);
 
 load();
+// const spinner = createSpinner("FETCH ... \n").start();
+// setTimeout(() => {
+//   spinner.success();
+// }, 3000);

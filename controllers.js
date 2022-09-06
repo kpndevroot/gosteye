@@ -1,13 +1,17 @@
 import si from "systeminformation";
 import * as util from "./utils/common.js";
+import chalkAnimation from "chalk-animation";
+import chalk from "chalk";
 // npm i chalk chalk-animation figlet gradient-string inquirer nanospinner
 // cpu information
 
 export const cpuData = async () => {
   try {
     const data = await si.cpu();
-    console.log("CPU Information:");
-    console.log("- manufucturer: " + data.manufacturer);
+    // console.log("CPU Information:");
+    console.log(chalk.blue.bold("CPU Information"));
+
+    console.log("- manufacturer: " + data.manufacturer);
     console.log("- brand: " + data.brand);
     console.log("- cores: " + data.cores);
     console.log("- no of processors: " + data.processors);
@@ -35,7 +39,7 @@ export const cpuData = async () => {
 
 export const OsData = async () => {
   try {
-    console.log("Os Information:");
+    console.log(chalk.blue.bold("Os Information:"));
     await si.osInfo().then((data) => {
       console.log("- platform: " + data.platform);
       console.log("- distro: " + data.distro);
@@ -59,7 +63,7 @@ export const OsData = async () => {
 
 export const memData = async () => {
   try {
-    console.log("Ram Information:");
+    console.log(chalk.blue.bold("Ram Information:"));
     await si.mem().then((data) => {
       console.log("- total: " + util.bytes_to_size(data.total));
       console.log("- free: " + util.bytes_to_size(data.free));
@@ -91,7 +95,7 @@ export const memData = async () => {
 
 export const batteryData = async () => {
   try {
-    console.log("Battery Information:");
+    console.log(chalk.blue.bold("Battery Information:"));
     await si.battery().then((data) => {
       console.log("- battery: " + data.hasBattery);
       console.log("- manufacturer: " + data.manufacturer);
@@ -117,7 +121,7 @@ export const batteryData = async () => {
 
 export const graphicsData = async () => {
   try {
-    console.log("Graphics Information:");
+    console.log(chalk.blue.bold("Graphics Information:"));
     await si.graphics().then((data) => {
       data.controllers.map((graphics) => {
         console.log(
@@ -135,7 +139,7 @@ export const graphicsData = async () => {
 
 export const displayData = async () => {
   try {
-    console.log("Display Information:");
+    console.log(chalk.blue.bold("Display Information:"));
     await si.graphics().then((data) => {
       data.displays.map((graphics) => {
         console.log(
@@ -153,7 +157,7 @@ export const displayData = async () => {
 
 export const storageData = async () => {
   try {
-    console.log("Display Information:");
+    console.log(chalk.blue.bold("Display Information:"));
     await si.diskLayout().then((data) => {
       data.map((disk) => {
         console.log(
@@ -179,7 +183,7 @@ export const storageData = async () => {
 
 export const usbData = async () => {
   try {
-    console.log("Usb Device Information:");
+    console.log(chalk.blue.bold("Usb Device Information:"));
     await si.usb().then((data) => {
       data.map((usb) => {
         console.log(
@@ -197,7 +201,7 @@ export const usbData = async () => {
 
 export const wifiInterfaceData = async () => {
   try {
-    console.log("wifi Interface Information:");
+    console.log(chalk.blue.bold("WIFI Interface Information:"));
 
     await si.wifiInterfaces().then((data) => {
       data.map((wi) => {
@@ -216,7 +220,7 @@ export const wifiInterfaceData = async () => {
 
 export const wifiConnectionData = async () => {
   try {
-    console.log("wifi connection Information:");
+    console.log(chalk.blue.bold("WIFI connection Information:"));
 
     await si.wifiConnections().then((data) => {
       data.map((wi) => {
@@ -235,7 +239,7 @@ export const wifiConnectionData = async () => {
 
 export const audioData = async () => {
   try {
-    console.log("audio Interface Information:");
+    console.log(chalk.blue.bold("Audio Interface Information:"));
 
     await si.audio().then((data) => {
       data.map((au) => {
@@ -255,7 +259,7 @@ export const audioData = async () => {
 
 export const bluetoothData = async () => {
   try {
-    console.log("audio Interface Information:");
+    console.log(chalk.blue.bold("Bluetooth Interface Information:"));
 
     await si.bluetoothDevices().then((data) => {
       data.map((res) => {
@@ -267,7 +271,6 @@ export const bluetoothData = async () => {
       });
     });
   } catch (error) {
-    console.log(error);
+    console.log({ error: error });
   }
 };
-  
