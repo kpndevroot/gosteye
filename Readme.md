@@ -1,21 +1,36 @@
 GOST'S EYE For System Hardware Information
 
-Requirements
+# Requirements
 
+```
 => nodejs
 
-How To Run
+```
 
--> clone this project
+# How to install
 
--> cd gosteye
+```
+git clone https://github.com/kpndevroot/gosteye.git
+cd gosteye
+npm install
+```
 
--> npm install
+### How to run it in windows
 
-For Linux Users
+(make sure you are administrator)
 
-# sudo npm start
+```
+npm start
+or
+node gosteye.js
 
-For Windows Users
+```
 
-# npm start
+### How to run it in linux / mac
+
+```
+sudo npm start
+or
+sudo node gosteye.js
+
+```
