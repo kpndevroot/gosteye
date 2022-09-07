@@ -2,17 +2,15 @@
   "name": "nodeos",
   "version": "1.0.0",
   "description": "",
-  "main": "server..js",
+  "main": "gosteye.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "sudo node gosteye.js"
+    "start": "node gosteye.js"
   },
   "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-  
     "chalk": "^5.0.1",
     "figlet": "^1.5.2",
     "inquirer": "^9.1.1",

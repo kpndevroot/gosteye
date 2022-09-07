@@ -1,6 +1,5 @@
 import si from "systeminformation";
 import * as util from "../utils/common.js";
-import chalkAnimation from "chalk-animation";
 import chalk from "chalk";
 import emoji from "node-emoji";
 // npm i chalk chalk-animation figlet gradient-string inquirer nanospinner

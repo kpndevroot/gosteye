@@ -1,6 +1,6 @@
-GOST'S EYE for system hardware information
+GOST'S EYE For System Hardware Information
 
-requirements
+Requirements
 
 => nodejs
 
@@ -12,8 +12,10 @@ How To Run
 
 -> npm install
 
-# sudo node gosteye.js
+For Linux Users
 
-or
+# sudo npm start
+
+For Windows Users
 
 # npm start
